@@ -1,5 +1,6 @@
 ﻿
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UserCase;
 using UserCase.Interfaces;
@@ -11,6 +12,7 @@ namespace WebAPI;
 [ApiController]
 [Route("pedido")]
 [Produces("application/json")]
+[Authorize]
 public class PedidoController : ControllerBase
 {
     private readonly IPedidoUserCase _pedidoService;

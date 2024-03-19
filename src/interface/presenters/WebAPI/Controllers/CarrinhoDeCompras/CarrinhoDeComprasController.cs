@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UserCase;
 using UserCase.Interfaces;
@@ -13,6 +14,7 @@ namespace WebApi.Controllers.CarrinhoDeCompras;
 [ApiController]
 [Route("carrinhodecompras")]
 [Produces("application/json")]
+[Authorize]
 public class CarrinhoDeComprasController : ControllerBase
 {
     private readonly ICarrinhoDeComprasUserCase _carrinhoDeComprasUserCase;

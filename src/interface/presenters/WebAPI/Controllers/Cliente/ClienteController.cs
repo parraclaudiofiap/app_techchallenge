@@ -1,4 +1,5 @@
 ﻿
+using System.Security.Claims;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -60,7 +61,7 @@ public class ClienteController(IMapper mapper, IClienteUserCase clienteUserCase)
         try
         {
             var clienteDto = await _clienteUserCase.PesquisarPorCpf(cpf);
-
+ 
             return clienteDto is null 
                 ? NoContent()
                 : Ok(_mapper.Map<ClienteResponse>(clienteDto));
