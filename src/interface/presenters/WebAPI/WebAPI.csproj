@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Amazon.AspNetCore.Identity.Cognito" Version="3.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.ReDoc" Version="6.5.0" />
+    
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\gateways\DatabaseGateway/DatabaseGateway.csproj" />
+    <ProjectReference Include="..\..\..\external\MongoRepository\MongoRepository.csproj" />
+    <ProjectReference Include="..\..\gateways\MeioPagamentoGateway\MeioPagamentoGateway.csproj" />
+    <ProjectReference Include="..\..\..\core\UserCase\UserCase.csproj" />
+    <ProjectReference Include="..\..\..\external\AwsServices\AwsServices.csproj" />
+    <ProjectReference Include="..\..\gateways\CloudGateway\CloudGateway.csproj" />
+  </ItemGroup>
+
+
+</Project>

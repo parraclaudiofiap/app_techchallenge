@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-techchallenge02
+  labels:
+    app: app-techchallenge02
+spec:
+  selector:
+    matchLabels:
+      app: app-techchallenge02
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: app-techchallenge02
+    spec:
+      containers:
+        - name: techchallenge02
+          image: techchallenge02
+          imagePullPolicy: Never
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "1024Mi"
+              cpu: "1.0"
+          ports:
+            - containerPort: 80
+              name: app-port
+          readinessProbe:
+            httpGet:
+              path: /health/ready
+              port: app-port
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            failureThreshold: 3
+          livenessProbe:
+            httpGet:
+              path: /health/live
+              port: app-port
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            failureThreshold: 3

@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.CognitoIdentityProvider" Version="3.7.303.3" />
+    <PackageReference Include="AWSSDK.SecretsManager" Version="3.7.302.33" />
+    <PackageReference Include="AWSSDK.SecretsManager.Caching" Version="1.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\interface\gateways\CloudGateway\CloudGateway.csproj" />
+  </ItemGroup>
+
+</Project>

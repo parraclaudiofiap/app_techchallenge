@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-techchallenge02-svc
+spec:
+  selector:
+    app: app-techchallenge02
+  ports:
+  - port: 80
+    nodePort: 30000
+    protocol: TCP
+  type: NodePort
