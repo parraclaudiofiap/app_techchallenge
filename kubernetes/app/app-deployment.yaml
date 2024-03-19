@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: techchallenge02
-          image: techchallenge02
+          image: 341161836869.dkr.ecr.us-east-1.amazonaws.com/app-techchallenge
           imagePullPolicy: Never
           resources:
             requests:
