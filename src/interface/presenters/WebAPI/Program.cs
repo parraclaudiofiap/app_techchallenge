@@ -86,7 +86,7 @@ builder.Services.AddAuthentication(options =>
 })
 .AddJwtBearer(options =>
 {   
-    options.Authority = "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_qe71znqxp";
+    options.Authority = "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_S1n4r7ixe";
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuerSigningKey = true,

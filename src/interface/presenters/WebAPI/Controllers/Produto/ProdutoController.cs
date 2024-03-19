@@ -1,5 +1,6 @@
 using AutoMapper;
 using Domain.ValueObjects;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UserCase;
 using UserCase.Interfaces;
@@ -12,6 +13,7 @@ namespace WebApi.Controllers.Produto;
 [ApiController]
 [Route("produto")]
 [Produces("application/json")]
+[Authorize]
 public class ProdutoController : ControllerBase
 {
     private readonly IProdutoUserCase _produtoUserCase;

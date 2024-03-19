@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UserCase;
 
@@ -10,6 +11,7 @@ namespace WebAPI;
 [ApiController]
 [Route("pagamento")]
 [Produces("application/json")]
+[Authorize]
 public class OrdemPagamentoController(IOrdemPagamentoUserCase ordemPagamentoUserCase, IMapper mapper) : ControllerBase
 {
     private readonly IOrdemPagamentoUserCase _ordemPagamentoUserCase = ordemPagamentoUserCase;
