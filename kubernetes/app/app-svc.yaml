@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: app-techchallenge02
+  type: LoadBalancer
   ports:
   - port: 80
-    targetPort: 30000
-    protocol: TCP
+    targetPort: 80
