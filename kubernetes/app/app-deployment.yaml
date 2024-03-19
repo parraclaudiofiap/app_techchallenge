@@ -8,7 +8,12 @@ spec:
   selector:
     matchLabels:
       app: app-techchallenge02
-  replicas: 1
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 2
+      maxSurge: 2
   template:
     metadata:
       labels:
@@ -18,6 +23,10 @@ spec:
         - name: techchallenge02
           image: 341161836869.dkr.ecr.us-east-1.amazonaws.com/app-techchallenge
           imagePullPolicy: Always
+          securityContext:
+            privileged: false
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
           resources:
             requests:
               memory: "256Mi"
@@ -26,7 +35,7 @@ spec:
               memory: "512Mi"
               cpu: "0.5"
           ports:
-            - containerPort: 30000
+            - containerPort: 80
               name: app-port
           readinessProbe:
             httpGet:
