@@ -17,13 +17,13 @@ spec:
       containers:
         - name: techchallenge02
           image: 341161836869.dkr.ecr.us-east-1.amazonaws.com/app-techchallenge
-          imagePullPolicy: Never
+          imagePullPolicy: Always
           resources:
             requests:
-              memory: "512Mi"
+              memory: "256Mi"
               cpu: "250m"
             limits:
-              memory: "1024Mi"
+              memory: "512Mi"
               cpu: "1.0"
           ports:
             - containerPort: 80

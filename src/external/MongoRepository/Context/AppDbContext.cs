@@ -20,7 +20,7 @@ public class AppDbContext
     public AppDbContext(IOptions<MongoDbConfig> config)
     {
         var mongodbConnectionString = SecretManager.GetSecret("mongodb_connectionstring").GetAwaiter().GetResult();
-        mongoClient = new MongoClient($"{mongodbConnectionString}?retryWrites=true&w=majority&appName=atlasClusterName");
+        mongoClient = new MongoClient($"{mongodbConnectionString}/?retryWrites=true&w=majority&sslVerifyCertificate=false");
         database = mongoClient.GetDatabase("fiap");
     }
     
