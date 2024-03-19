@@ -1,13 +1,10 @@
 ﻿
 using MongoRepository.Entities;
 using Microsoft.Extensions.Options;
-using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
-using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
 using Gateway;
 using DbGateway;
-using Domain.Entities;
 using AwsServices;
 
 namespace MongoRepository.Context;
@@ -19,8 +16,9 @@ public class AppDbContext
 
     public AppDbContext(IOptions<MongoDbConfig> config)
     {
+
         var mongodbConnectionString = SecretManager.GetSecret("mongodb_connectionstring").GetAwaiter().GetResult();
-        mongoClient = new MongoClient($"{mongodbConnectionString}/?retryWrites=true&w=majority&sslVerifyCertificate=false");
+        mongoClient = new MongoClient($"{mongodbConnectionString}/?retryWrites=true&w=majority");
         database = mongoClient.GetDatabase("fiap");
     }
     

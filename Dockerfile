@@ -21,8 +21,8 @@ RUN dotnet publish -c Release -o out
 
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
-EXPOSE 80
-ENV ASPNETCORE_URLS=http://*:80
+EXPOSE 30000
+ENV ASPNETCORE_URLS=http://*:30000
 WORKDIR /app
 COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "WebAPI.dll"]
