@@ -53,3 +53,7 @@ jobs:
         -f kubernetes/app/app-hpa.yaml \
         -f kubernetes/app/app-svc.yaml 
 
+    - name: get details 
+      run:  kubectl -n app-techchallenge02 describe service app-techchallenge02
+
+
