@@ -8,12 +8,14 @@ public class Cliente : IAggregateRoot
     public CPF CPF { get; private set; }
     public string Nome { get; private set; }
     public string Email{ get; private set; }
+    public string Senha{ get; private set; }
     
-    public Cliente(CPF cpf, string nome, string email)
+    public Cliente(CPF cpf, string nome, string email, string senha)
     {
         CPF = cpf;
         Nome = nome;
         Email = email;
+        Senha = senha;
         
         ValidateEntity();
     }
