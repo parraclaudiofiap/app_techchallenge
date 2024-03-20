@@ -49,7 +49,7 @@ public class ClienteUserCaseTest
     [Fact]
     public async void PesquisarPorCpfSucesso()
     {
-        var cliente = new Cliente("58669754088", "Western Cape","WesternCape@hotmail.com");
+        var cliente = new Cliente("58669754088", "Western Cape","WesternCape@hotmail.com", null);
 
         _clienteGatewayMock.Setup(g => g.BuscarPorCPF(It.IsAny<string>())).Returns(Task.FromResult(cliente));
 

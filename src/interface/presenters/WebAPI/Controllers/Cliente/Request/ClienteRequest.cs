@@ -21,4 +21,6 @@ public class ClienteRequest
     /// </summary>
     [DefaultValue("WesternCape@hotmail.com")]
     public string Email{ get;  set; }
+
+    public string Senha{ get;  set; }
 }

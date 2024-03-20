@@ -19,12 +19,12 @@ public class ClienteGateway : IClienteGateway
     {
         var dbCliente = await _clienteRepository.BuscarPorCPF(cpf);
 
-        return new Cliente(dbCliente.CPF, dbCliente.Nome, dbCliente.Email);
+        return new Cliente(dbCliente.CPF, dbCliente.Nome, dbCliente.Email, null);
     }
 
     public async Task<bool> Inserir(Cliente cliente)
     {
-       var authId = await _authGateway.CadastrarUsuario(cliente.CPF, "Test@@123");
+       var authId = await _authGateway.CadastrarUsuario(cliente.CPF, cliente.Senha);
 
         var clienteDAO = new ClienteDAO()
         {
